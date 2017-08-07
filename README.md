@@ -61,7 +61,7 @@ Ensure that both node and npm are installed. `node -v; npm -v`
 ## Notes:
 Non optimized PNGs are approximately a third larger.
 
-##License
+## License
 
 These images, scripts and subsequent transformational output (e.g. custom sized PNGs) are released into the public domain or optionally licensed under the [WTFPL][6] in juristictions where the public domain is not a recognized legal concept.  Either way, do as you see fit: relicense, embed in commercial, non-commercial or open-source software, etc.
 
