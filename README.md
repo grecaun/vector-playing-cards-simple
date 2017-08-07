@@ -2,7 +2,7 @@
 
 This is a simple collection of SVG images defining a deck of playing cards (based on [vector-playing-cards][4]) and two scripts (powershell and bash) which will convert a folder of svg files into arbitrarily sized png files.
 
-The idea for this came from [nopeter's Vector-Playing-Cards][5].  Most of this readme is in fact from that repository.
+The idea for this came from [nopeter's Vector-Playing-Cards][5].  This readme is based on nopeter's readme.
 
 ## Usage:
 
@@ -76,6 +76,3 @@ The original source images were released by [Byron Knoll][3] into the public dom
  [6]: http://en.wikipedia.org/wiki/WTFPL
  [7]: https://nodejs.org/en/download/package-manager/#macos
  [8]: https://github.com/domenic/svg2png
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/notpeter/vector-playing-cards/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
