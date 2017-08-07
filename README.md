@@ -49,7 +49,7 @@ The idea for this came from [nopeter's Vector-Playing-Cards][5].  This readme is
 To generate custom PNG images, you'll need the following:
 
  * Node.js:
-   * [Windows][1] - Recommended for Windows
+   * [Windows][1]
    * [Debian based Linux Distros][2]
    * [Mac OS X][7]
 
