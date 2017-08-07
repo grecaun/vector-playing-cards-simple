@@ -1,4 +1,4 @@
-# Vector Playing Cards 2
+# Vector Playing Cards (Simple)
 
 This is a simple collection of SVG images defining a deck of playing cards (based on [vector-playing-cards][4]) and two scripts (powershell and bash) which will convert a folder of svg files into arbitrarily sized png files.
 
