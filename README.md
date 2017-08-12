@@ -1,14 +1,33 @@
 # Vector Playing Cards (Simple)
 
-This is a simple collection of SVG images defining a deck of playing cards (based on [vector-playing-cards][4]) and two scripts (powershell and bash) which will convert a folder of svg files into arbitrarily sized png files.
+## Table of Contents
+
+  * [Information](#information)
+  * [svg2png Scripts](#svg2png-scripts)
+    * [Bash](#bash)
+    * [Powershell](#powershell)
+    * [Example Use](#example-use)
+    * [Prerequisites](#prerequisites)
+  * [Card Creator Scripts](#card-creator-scripts)
+    * [Bash](#bash-1)
+    * [Powershell](#powershell-1)
+    * [Example Use](#example-use-1)
+    * [Prerequisites](#prerequisites-1)
+  * [License](#license)
+
+## Information
+
+This repository holds two sets of SVG images defining (or mostly defining) a deck of playing cards (based on [vector-playing-cards][4]) and two scripts (powershell and bash) which will convert a folder of svg files into arbitrarily sized png files.
+
+Along with these two scripts are two other scripts that I used to create the *new* set of svg images.  The older set had numbers that were smaller than I liked.  I used these scripts on Windows, so users on another OS may need to find and download the font file to use these files.  Said font is [Niagara Solid][font].
 
 The idea for this came from [nopeter's Vector-Playing-Cards][5].  This readme is based on nopeter's readme.
 
-## Usage:
+## svg2png Scripts:
 
-### On a unix based system do this:
+### Bash
 
-    ./script.sh [-w WIDTH] [-i INPUTDIR] [-o OUTPUTDIR] [-q] [-d] [-h]
+    ./svg2png.sh [-w WIDTH] [-i INPUTDIR] [-o OUTPUTDIR] [-q] [-d] [-h]
 
     Optional Arguments:
     -i INPUTDIR         Input directory of SVGs. Default is cards-svg
@@ -18,9 +37,9 @@ The idea for this came from [nopeter's Vector-Playing-Cards][5].  This readme is
     -q, --quiet         Squelch output messages.
     -h, --help          Show this help message and exit.
 
-### On a windows system in powershell with scripting enabled do this:
+### Powershell
 
-    script.ps1 [-w WIDTH] [-i INPUTDIR] [-o OUTPUTDIR] [-q] [-d] [-h]
+    .\svg2png.ps1 [-w WIDTH] [-i INPUTDIR] [-o OUTPUTDIR] [-q] [-d] [-h]
 
     Optional Arguments:
     -i INPUTDIR         Input directory of SVGs. Default is cards-svg
@@ -30,22 +49,23 @@ The idea for this came from [nopeter's Vector-Playing-Cards][5].  This readme is
     -q, -quiet          Squelch output messages.
     -h, -help           Show this help message and exit.
 
-## Example use:
+### Example Use
 
   * Convert SVGs to 300px wide PNGs:
 
-    `./script.sh -i cards-svg -o cards-png-300px -w 300`
+    `./svg2png.sh -i cards-svg -o cards-png-300px -w 300`
 
   * Convert SVGs to 320px wide PNGs suppressing all status output:
 
-  	`script.ps1 -i cards-svg -o cards-png-320px -w 320 -q`
+  	`.\svg2png.ps1 -i cards-svg -o cards-png-320px -w 320 -q`
 
   * Perform a dry run with most messages squelched:
 
-    `./script.sh -dry -quiet`
+    `./svg2png.sh -dry -quiet`
 
 
-## Prerequisites:
+### Prerequisites
+
 To generate custom PNG images, you'll need the following:
 
  * Node.js:
@@ -58,8 +78,39 @@ Ensure that both node and npm are installed. `node -v; npm -v`
  * [svg2png CLI][8]
    * npm install svg2png -g
 
-## Notes:
-Non optimized PNGs are approximately a third larger.
+## Card Creator Scripts
+
+### Bash:
+
+    ./card_creator.sh [-o OUTPUTDIR] [-q] [-h]
+
+    Optional Arguments:
+    -o OUTPUTDIR        Directory where you want the new SVG files placed.
+    -q, --quiet         Squelch output messages.
+    -h, --help          Show this help message and exit.
+
+### Powershell:
+
+    .\card_creator.ps1 [-o OUTPUTDIR] [-q] [-h]
+
+    Optional Arguments:
+    -o OUTPUTDIR        Directory where you want the new SVG files placed.
+    -q, -quiet          Squelch output messages.
+    -h, -help           Show this help message and exit.
+
+### Example use:
+
+  * Create new set of SVG files in a folder called 'whats-up-doc'
+
+    `./card_creator.sh -o whats-up-doc`
+
+  * Create new set of SVG files in the default folder (cards-svg-new) quietly
+
+    `.\card_creator.ps1 -q`
+
+### Prerequisites:
+
+There are none for this script. Run it and enjoy.
 
 ## License
 
@@ -76,3 +127,4 @@ The original source images were released by [Byron Knoll][3] into the public dom
  [6]: http://en.wikipedia.org/wiki/WTFPL
  [7]: https://nodejs.org/en/download/package-manager/#macos
  [8]: https://github.com/domenic/svg2png
+ [font]: http://fontsgeek.com/fonts/Niagara-Solid-Regular
