@@ -25,10 +25,14 @@ $o=$o -replace "\\$", "" -replace "^\.\\", ""
 
 if (-Not ($q -or $quiet)) { echo "Creating output directory." }
 If (-Not (test-path $o)) {
-    New-Item -ItemType Directory -Force -Path $o > $null
+    if ($d -Or $dry) {
+        echo "New-Item -ItemType Directory -Force -Path $o > $null"
+    } else {
+        New-Item -ItemType Directory -Force -Path $o > $null
+    }
 }
 if (-Not ($q -or $quiet)) { echo "Directory created." "Starting to work on image files." }
-$FILENAMES = Get-ChildItem $i
+$FILENAMES = Get-ChildItem $i -Filter *.svg
 foreach ($FILENAME in $FILENAMES) {
     $OUTFILENAME=$FILENAME -replace ".svg$", ".png"
     if (-Not ($q -or $quiet)) { echo "Working on $FILENAME" }

@@ -32,23 +32,23 @@ done
 INPATH=$(echo $INPATH | sed "s/^\.\///;s/\/$//")
 OUTPATH=$(echo $OUTPATH | sed "s/^\.\///;s/\/$//")
 
-if [ QUIET == 'false' ] ; then echo Creating output directory.; fi
-if [ DRY == 'true' ]
+if [ $QUIET == 'false' ] ; then echo Creating output directory.; fi
+if [ $DRY == 'true' ]
 then
     echo mkdir -p $OUTPATH
 else
     mkdir -p $OUTPATH
 fi
-if [ QUIET == 'false' ] ; then echo Directory created.\nStarting image creation process.; fi
+if [ $QUIET == 'false' ] ; then echo Directory created.\nStarting image creation process.; fi
 for FILE in "$INPATH/"*.svg
 do
     OUTFILE="$(echo $FILE | sed 's@^'"$INPATH"'@@;s/.svg$//').png"
-    if [ QUIET == 'false' ] ; then echo Creating $OUTFILE; fi
-    if [ DRY == 'true' ]
+    if [ $QUIET == 'false' ] ; then echo Creating $OUTFILE; fi
+    if [ $DRY == 'true' ]
     then
         echo svg2png "$FILE" -o "$OUTPATH/$OUTFILE" -w $WIDTH
     else
         svg2png "$FILE" -o "$OUTPATH/$OUTFILE" -w $WIDTH
     fi
 done
-if [ QUIET == 'false' ] ; then echo Image creation process finished.; fi
+if [ $QUIET == 'false' ] ; then echo Image creation process finished.; fi
